@@ -14,6 +14,7 @@ import java.util.HashMap;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.InputMap;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -96,6 +97,11 @@ public class TextComponentDemo extends JFrame {
 		// Add the components.
 		getContentPane().add(splitPane, BorderLayout.CENTER);
 		getContentPane().add(statusPane, BorderLayout.PAGE_END);
+		//+++
+		final JButton disabledButton = new JButton("disabled");
+		disabledButton.setEnabled(false);
+		getContentPane().add(disabledButton, BorderLayout.PAGE_START);
+		//+++
 
 		// Set up the menu bar.
 		actions = createActionTable(textPane);
