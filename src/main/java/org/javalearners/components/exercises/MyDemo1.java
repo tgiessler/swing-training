@@ -19,7 +19,7 @@ public class MyDemo1 extends JFrame {
 		setPreferredSize(new Dimension(300, 150));
 
 		final JLabel demoLabel = new JLabel("My Demo", SwingConstants.CENTER);
-		demoLabel.setFont(new Font("SansSerif", Font.ITALIC, 18));
+		demoLabel.setFont(demoLabel.getFont().deriveFont(Font.ITALIC | Font.BOLD));
 		add(demoLabel, BorderLayout.CENTER);
 	}
 
