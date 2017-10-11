@@ -56,9 +56,9 @@ public class TextComponentDemo extends JFrame {
 	private final HashMap<Object, Action> actions;
 
 	// undo helpers
-	protected UndoAction undoAction;
-	protected RedoAction redoAction;
-	protected UndoManager undo = new UndoManager();
+	protected final UndoAction undoAction = new UndoAction();
+	protected final RedoAction redoAction = new RedoAction();
+	protected final UndoManager undo = new UndoManager();
 
 	public TextComponentDemo() {
 		super("TextComponentDemo");
@@ -99,9 +99,9 @@ public class TextComponentDemo extends JFrame {
 
 		// Set up the menu bar.
 		actions = createActionTable(textPane);
-		JMenu editMenu = createEditMenu();
-		JMenu styleMenu = createStyleMenu();
-		JMenuBar mb = new JMenuBar();
+		final JMenu editMenu = createEditMenu();
+		final JMenu styleMenu = createStyleMenu();
+		final JMenuBar mb = new JMenuBar();
 		mb.add(editMenu);
 		mb.add(styleMenu);
 		setJMenuBar(mb);
@@ -225,10 +225,7 @@ public class TextComponentDemo extends JFrame {
 		JMenu menu = new JMenu("Edit");
 
 		// Undo and redo are actions of our own creation.
-		undoAction = new UndoAction();
 		menu.add(undoAction);
-
-		redoAction = new RedoAction();
 		menu.add(redoAction);
 
 		menu.addSeparator();
